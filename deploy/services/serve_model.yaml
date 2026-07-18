@@ -1,0 +1,12 @@
+name: madewithml
+project_id: CHANGE_ME
+cluster_env: madewithml-cluster-env
+compute_config: madewithml-cluster-compute
+ray_serve_config:
+  import_path: deploy.services.serve_model:entrypoint
+  runtime_env:
+    working_dir: .
+    upload_path: s3://CHANGE_ME/CHANGE_ME/services
+    env_vars:
+      GITHUB_USERNAME: CHANGE_ME
+rollout_strategy: ROLLOUT # ROLLOUT or IN_PLACE
